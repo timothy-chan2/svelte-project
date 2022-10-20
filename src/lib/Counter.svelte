@@ -1,16 +1,18 @@
 <script lang="ts">
-  let count: number = 0
-  const increment = () => {
+  let count = 0
+  $: tripleCount = count * 3
+
+  const incrementCount = () => {
     count += 1
   }
 </script>
 
-<button on:click={increment}>
-  count is {count}
+<button on:click={incrementCount}>
+  Count is {count}
 </button>
 
 <p>
-  hello
+  {count} * 3 = {tripleCount}
 </p>
 
 <style>
