@@ -1,5 +1,6 @@
 <script lang="ts">
   let count = 0
+  // Reactive declaration: Re-run this line of code whenever any of the referenced values change
   $: tripleCount = count * 3
 
   const incrementCount = () => {
