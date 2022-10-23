@@ -1,6 +1,5 @@
 <script lang="ts">
-  import { identity } from 'svelte/internal';
-import svelteLogo from './assets/svelte.svg'
+  import svelteLogo from './assets/svelte.svg'
   import Counter from './lib/Counter.svelte'
 
   const person  = {
