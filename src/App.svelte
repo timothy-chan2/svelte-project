@@ -1,5 +1,6 @@
 <script lang="ts">
-  import svelteLogo from './assets/svelte.svg'
+  import { identity } from 'svelte/internal';
+import svelteLogo from './assets/svelte.svg'
   import Counter from './lib/Counter.svelte'
 
   const person  = {
@@ -10,6 +11,12 @@
   let user = {
     loggedIn: false
   }
+
+  const cats = [
+    { id: "78906d3", name: "Kitty" },
+    { id: "23354u7", name: "Jiminey" },
+    { id: "47866z9", name: "Kat" }
+  ]
 
   function toggle() {
     user.loggedIn = !user.loggedIn
@@ -45,6 +52,10 @@
       <Counter />
     {/if}
   </div>
+
+  {#each cats as {id, name}, ind}
+    <p>{name} has a collar ID {id} and finished #{ind + 1} in the race.</p>
+  {/each}
 
   <p>
     Check out <a href="https://github.com/sveltejs/kit#readme" target="_blank" rel="noreferrer">SvelteKit</a>, the official Svelte app framework powered by Vite!
