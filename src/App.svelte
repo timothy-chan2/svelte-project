@@ -4,7 +4,7 @@
 
   const person  = {
     name: "Jim",
-    size: "small"
+    num: 5
   }
 
   let user = {
@@ -39,7 +39,7 @@
 
   <div class="card">
     {#if user.loggedIn}
-      <Counter name={"Tom"} size={"tiny"}/>
+      <Counter name={"Tom"} num={4}/>
       <Counter {...person}/>
     {:else}
       <Counter />
