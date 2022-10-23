@@ -1,4 +1,7 @@
 <script lang="ts">
+  export let name = "The stranger";
+  export let size = "huge";
+
   let count = 0
   // Reactive declaration: Re-run this line of code whenever any of the referenced values change
   $: tripleCount = count * 3
@@ -9,11 +12,11 @@
 </script>
 
 <button on:click={incrementCount}>
-  Count is {count}
+  {name}'s count is {count}
 </button>
 
 <p>
-  {count} * 3 = {tripleCount}
+  {name}'s {size} math equation: {count} * 3 = {tripleCount}
 </p>
 
 <style>
