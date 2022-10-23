@@ -6,6 +6,14 @@
     name: "Jim",
     size: "small"
   }
+
+  let user = {
+    loggedIn: false
+  }
+
+  function toggle() {
+    user.loggedIn = !user.loggedIn
+  }
 </script>
 
 <main>
@@ -19,10 +27,23 @@
   </div>
   <h1>Vite + Svelte</h1>
 
+  {#if user.loggedIn}
+    <button on:click={toggle}>
+      Log out
+    </button>
+  {:else}
+    <button on:click={toggle}>
+      Log in
+    </button>
+  {/if}
+
   <div class="card">
-    <Counter name={"Tom"} size={"tiny"}/>
-    <Counter />
-    <Counter {...person}/>
+    {#if user.loggedIn}
+      <Counter name={"Tom"} size={"tiny"}/>
+      <Counter {...person}/>
+    {:else}
+      <Counter />
+    {/if}
   </div>
 
   <p>
@@ -48,5 +69,9 @@
   }
   .read-the-docs {
     color: #888;
+  }
+  button {
+    color: white;
+    background-color: #4CAF50;
   }
 </style>
