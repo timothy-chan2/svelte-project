@@ -20,6 +20,10 @@
   function toggle() {
     user.loggedIn = !user.loggedIn
   }
+
+  const handleMessage = (event) => {
+    alert(event.detail.text);
+  }
 </script>
 
 <main>
@@ -48,7 +52,7 @@
       <Counter name={"Tom"} num={4}/>
       <Counter {...person}/>
     {:else}
-      <Counter />
+      <Counter on:popUpMessage={handleMessage}/>
     {/if}
   </div>
 
