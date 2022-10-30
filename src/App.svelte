@@ -21,7 +21,7 @@
     user.loggedIn = !user.loggedIn
   }
 
-  const handleMessage = (event) => {
+  const handleMessage = (event: CustomEvent) => {
     alert(event.detail.text);
   }
 </script>
